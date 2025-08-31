@@ -14,7 +14,7 @@ Public Class UserManagement
         ListView1.Items.Clear()
         While dr.Read()
             Dim lv As New ListViewItem(dr("userid").ToString())
-            lv.SubItems.Add(dr("Account Number").ToString())
+            lv.SubItems.Add(dr("Account_Number").ToString()) ' ✅ fixed
             lv.SubItems.Add(dr("Name").ToString())
             lv.SubItems.Add(dr("Pin").ToString())
             lv.SubItems.Add(dr("Role").ToString())
@@ -25,13 +25,13 @@ Public Class UserManagement
 
     Private Sub txtsearch_TextChanged(sender As Object, e As EventArgs) Handles txtsearch.TextChanged
         Call Connection()
-        sql = "SELECT * FROM management_table WHERE `Name` LIKE '%" & txtsearch.Text & "%' OR `Account Number` LIKE '%" & txtsearch.Text & "%'"
+        sql = "SELECT * FROM management_table WHERE `Name` LIKE '%" & txtsearch.Text & "%' OR `Account_Number` LIKE '%" & txtsearch.Text & "%'" ' ✅ fixed
         cmd = New MySqlCommand(sql, cn)
         dr = cmd.ExecuteReader
         ListView1.Items.Clear()
         While dr.Read()
             Dim lv As New ListViewItem(dr("userid").ToString())
-            lv.SubItems.Add(dr("Account Number").ToString())
+            lv.SubItems.Add(dr("Account_Number").ToString()) ' ✅ fixed
             lv.SubItems.Add(dr("Name").ToString())
             lv.SubItems.Add(dr("Pin").ToString())
             lv.SubItems.Add(dr("Role").ToString())
@@ -42,7 +42,7 @@ Public Class UserManagement
 
     Private Sub CheckIfExist()
         Call Connection()
-        sql = "SELECT * FROM management_table WHERE `Account Number` = @AccountNumber"
+        sql = "SELECT * FROM management_table WHERE Account_Number = @AccountNumber" ' ✅ fixed
         cmd = New MySqlCommand(sql, cn)
         cmd.Parameters.AddWithValue("@AccountNumber", txtaccountnumber.Text)
         dr = cmd.ExecuteReader
@@ -64,7 +64,7 @@ Public Class UserManagement
 
     Private Sub Save()
         Call Connection()
-        sql = "INSERT INTO management_table (`Account Number`, `Name`, `Pin`, `Role`, `Status`) VALUES (@AccountNumber, @Name, @Pin, @Role, @Status)"
+        sql = "INSERT INTO management_table (Account_Number, Name, Pin, Role, Status) VALUES (@AccountNumber, @Name, @Pin, @Role, @Status)" ' ✅ fixed
         cmd = New MySqlCommand(sql, cn)
         With cmd
             .Parameters.AddWithValue("@AccountNumber", txtaccountnumber.Text)
@@ -99,7 +99,7 @@ Public Class UserManagement
 
     Private Sub UpdateTable()
         Call Connection()
-        sql = "UPDATE management_table SET `Account Number`=@AccountNumber, `Name`=@Name, `Pin`=@Pin, `Role`=@Role, `Status`=@Status WHERE userid=@userid"
+        sql = "UPDATE management_table SET Account_Number=@AccountNumber, Name=@Name, Pin=@Pin, Role=@Role, Status=@Status WHERE userid=@userid" ' ✅ fixed
         cmd = New MySqlCommand(sql, cn)
         With cmd
             .Parameters.AddWithValue("@AccountNumber", txtaccountnumber.Text)

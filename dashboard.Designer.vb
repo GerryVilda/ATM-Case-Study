@@ -25,15 +25,14 @@ Partial Class dashboard
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(dashboard))
         Panel1 = New Panel()
         Button6 = New Button()
-        Button1 = New Button()
+        btnstatementofaccount = New Button()
         Panel2 = New Panel()
         PictureBox1 = New PictureBox()
-        Button5 = New Button()
-        Button4 = New Button()
-        Button3 = New Button()
+        btntransfer = New Button()
+        btnwithdrawal = New Button()
+        btndeposit = New Button()
         BTNBALANCEINQUIRY = New Button()
         Panel3 = New Panel()
-        lblwelcomeuser = New Label()
         Panel1.SuspendLayout()
         Panel2.SuspendLayout()
         CType(PictureBox1, ComponentModel.ISupportInitialize).BeginInit()
@@ -43,7 +42,7 @@ Partial Class dashboard
         ' Panel1
         ' 
         Panel1.Controls.Add(Button6)
-        Panel1.Controls.Add(Button1)
+        Panel1.Controls.Add(btnstatementofaccount)
         Panel1.Controls.Add(Panel2)
         Panel1.Dock = DockStyle.Left
         Panel1.Location = New Point(0, 0)
@@ -70,24 +69,24 @@ Partial Class dashboard
         Button6.Text = "LOGOUT"
         Button6.UseVisualStyleBackColor = False
         ' 
-        ' Button1
+        ' btnstatementofaccount
         ' 
-        Button1.BackColor = Color.Goldenrod
-        Button1.BackgroundImageLayout = ImageLayout.None
-        Button1.Cursor = Cursors.Hand
-        Button1.Dock = DockStyle.Top
-        Button1.FlatAppearance.BorderSize = 0
-        Button1.FlatAppearance.MouseDownBackColor = Color.Goldenrod
-        Button1.FlatAppearance.MouseOverBackColor = Color.DarkGoldenrod
-        Button1.FlatStyle = FlatStyle.Flat
-        Button1.Font = New Font("Segoe UI Semibold", 14F, FontStyle.Bold)
-        Button1.ForeColor = Color.Black
-        Button1.Location = New Point(0, 172)
-        Button1.Name = "Button1"
-        Button1.Size = New Size(277, 97)
-        Button1.TabIndex = 1
-        Button1.Text = "STATEMENT OF" & vbCrLf & "ACCOUNT"
-        Button1.UseVisualStyleBackColor = False
+        btnstatementofaccount.BackColor = Color.Goldenrod
+        btnstatementofaccount.BackgroundImageLayout = ImageLayout.None
+        btnstatementofaccount.Cursor = Cursors.Hand
+        btnstatementofaccount.Dock = DockStyle.Top
+        btnstatementofaccount.FlatAppearance.BorderSize = 0
+        btnstatementofaccount.FlatAppearance.MouseDownBackColor = Color.Goldenrod
+        btnstatementofaccount.FlatAppearance.MouseOverBackColor = Color.DarkGoldenrod
+        btnstatementofaccount.FlatStyle = FlatStyle.Flat
+        btnstatementofaccount.Font = New Font("Segoe UI Semibold", 14F, FontStyle.Bold)
+        btnstatementofaccount.ForeColor = Color.Black
+        btnstatementofaccount.Location = New Point(0, 172)
+        btnstatementofaccount.Name = "btnstatementofaccount"
+        btnstatementofaccount.Size = New Size(277, 97)
+        btnstatementofaccount.TabIndex = 1
+        btnstatementofaccount.Text = "STATEMENT OF" & vbCrLf & "ACCOUNT"
+        btnstatementofaccount.UseVisualStyleBackColor = False
         ' 
         ' Panel2
         ' 
@@ -109,59 +108,59 @@ Partial Class dashboard
         PictureBox1.TabIndex = 0
         PictureBox1.TabStop = False
         ' 
-        ' Button5
+        ' btntransfer
         ' 
-        Button5.BackColor = Color.Goldenrod
-        Button5.BackgroundImageLayout = ImageLayout.None
-        Button5.Cursor = Cursors.Hand
-        Button5.FlatAppearance.BorderSize = 0
-        Button5.FlatAppearance.MouseDownBackColor = Color.Goldenrod
-        Button5.FlatAppearance.MouseOverBackColor = Color.DarkGoldenrod
-        Button5.FlatStyle = FlatStyle.Flat
-        Button5.Font = New Font("Segoe UI", 16F, FontStyle.Bold)
-        Button5.ForeColor = Color.Black
-        Button5.Location = New Point(23, 343)
-        Button5.Name = "Button5"
-        Button5.Size = New Size(510, 97)
-        Button5.TabIndex = 5
-        Button5.Text = "TRANSFER"
-        Button5.UseVisualStyleBackColor = False
+        btntransfer.BackColor = Color.Goldenrod
+        btntransfer.BackgroundImageLayout = ImageLayout.None
+        btntransfer.Cursor = Cursors.Hand
+        btntransfer.FlatAppearance.BorderSize = 0
+        btntransfer.FlatAppearance.MouseDownBackColor = Color.Goldenrod
+        btntransfer.FlatAppearance.MouseOverBackColor = Color.DarkGoldenrod
+        btntransfer.FlatStyle = FlatStyle.Flat
+        btntransfer.Font = New Font("Segoe UI", 16F, FontStyle.Bold)
+        btntransfer.ForeColor = Color.Black
+        btntransfer.Location = New Point(23, 343)
+        btntransfer.Name = "btntransfer"
+        btntransfer.Size = New Size(510, 97)
+        btntransfer.TabIndex = 5
+        btntransfer.Text = "TRANSFER"
+        btntransfer.UseVisualStyleBackColor = False
         ' 
-        ' Button4
+        ' btnwithdrawal
         ' 
-        Button4.BackColor = Color.Goldenrod
-        Button4.BackgroundImageLayout = ImageLayout.None
-        Button4.Cursor = Cursors.Hand
-        Button4.FlatAppearance.BorderSize = 0
-        Button4.FlatAppearance.MouseDownBackColor = Color.Goldenrod
-        Button4.FlatAppearance.MouseOverBackColor = Color.DarkGoldenrod
-        Button4.FlatStyle = FlatStyle.Flat
-        Button4.Font = New Font("Segoe UI", 16F, FontStyle.Bold)
-        Button4.ForeColor = Color.Black
-        Button4.Location = New Point(23, 240)
-        Button4.Name = "Button4"
-        Button4.Size = New Size(510, 97)
-        Button4.TabIndex = 4
-        Button4.Text = "WITHDRAWAL"
-        Button4.UseVisualStyleBackColor = False
+        btnwithdrawal.BackColor = Color.Goldenrod
+        btnwithdrawal.BackgroundImageLayout = ImageLayout.None
+        btnwithdrawal.Cursor = Cursors.Hand
+        btnwithdrawal.FlatAppearance.BorderSize = 0
+        btnwithdrawal.FlatAppearance.MouseDownBackColor = Color.Goldenrod
+        btnwithdrawal.FlatAppearance.MouseOverBackColor = Color.DarkGoldenrod
+        btnwithdrawal.FlatStyle = FlatStyle.Flat
+        btnwithdrawal.Font = New Font("Segoe UI", 16F, FontStyle.Bold)
+        btnwithdrawal.ForeColor = Color.Black
+        btnwithdrawal.Location = New Point(-143, 237)
+        btnwithdrawal.Name = "btnwithdrawal"
+        btnwithdrawal.Size = New Size(510, 97)
+        btnwithdrawal.TabIndex = 4
+        btnwithdrawal.Text = "WITHDRAWAL"
+        btnwithdrawal.UseVisualStyleBackColor = False
         ' 
-        ' Button3
+        ' btndeposit
         ' 
-        Button3.BackColor = Color.Goldenrod
-        Button3.BackgroundImageLayout = ImageLayout.None
-        Button3.Cursor = Cursors.Hand
-        Button3.FlatAppearance.BorderSize = 0
-        Button3.FlatAppearance.MouseDownBackColor = Color.Goldenrod
-        Button3.FlatAppearance.MouseOverBackColor = Color.DarkGoldenrod
-        Button3.FlatStyle = FlatStyle.Flat
-        Button3.Font = New Font("Segoe UI", 16F, FontStyle.Bold)
-        Button3.ForeColor = Color.Black
-        Button3.Location = New Point(23, 134)
-        Button3.Name = "Button3"
-        Button3.Size = New Size(510, 97)
-        Button3.TabIndex = 3
-        Button3.Text = "DEPOSIT"
-        Button3.UseVisualStyleBackColor = False
+        btndeposit.BackColor = Color.Goldenrod
+        btndeposit.BackgroundImageLayout = ImageLayout.None
+        btndeposit.Cursor = Cursors.Hand
+        btndeposit.FlatAppearance.BorderSize = 0
+        btndeposit.FlatAppearance.MouseDownBackColor = Color.Goldenrod
+        btndeposit.FlatAppearance.MouseOverBackColor = Color.DarkGoldenrod
+        btndeposit.FlatStyle = FlatStyle.Flat
+        btndeposit.Font = New Font("Segoe UI", 16F, FontStyle.Bold)
+        btndeposit.ForeColor = Color.Black
+        btndeposit.Location = New Point(23, 134)
+        btndeposit.Name = "btndeposit"
+        btndeposit.Size = New Size(510, 97)
+        btndeposit.TabIndex = 3
+        btndeposit.Text = "DEPOSIT"
+        btndeposit.UseVisualStyleBackColor = False
         ' 
         ' BTNBALANCEINQUIRY
         ' 
@@ -186,26 +185,15 @@ Partial Class dashboard
         Panel3.BackColor = Color.FromArgb(CByte(26), CByte(22), CByte(22))
         Panel3.BackgroundImageLayout = ImageLayout.None
         Panel3.BorderStyle = BorderStyle.Fixed3D
-        Panel3.Controls.Add(Button5)
+        Panel3.Controls.Add(btntransfer)
         Panel3.Controls.Add(BTNBALANCEINQUIRY)
-        Panel3.Controls.Add(Button4)
-        Panel3.Controls.Add(Button3)
+        Panel3.Controls.Add(btnwithdrawal)
+        Panel3.Controls.Add(btndeposit)
         Panel3.ForeColor = Color.FromArgb(CByte(212), CByte(175), CByte(55))
         Panel3.Location = New Point(313, 256)
         Panel3.Name = "Panel3"
         Panel3.Size = New Size(566, 465)
         Panel3.TabIndex = 6
-        ' 
-        ' lblwelcomeuser
-        ' 
-        lblwelcomeuser.AutoSize = True
-        lblwelcomeuser.Font = New Font("Segoe UI", 14F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        lblwelcomeuser.ForeColor = SystemColors.ButtonHighlight
-        lblwelcomeuser.Location = New Point(291, 19)
-        lblwelcomeuser.Name = "lblwelcomeuser"
-        lblwelcomeuser.Size = New Size(102, 38)
-        lblwelcomeuser.TabIndex = 7
-        lblwelcomeuser.Text = "Label1"
         ' 
         ' dashboard
         ' 
@@ -214,7 +202,6 @@ Partial Class dashboard
         BackColor = SystemColors.ActiveCaptionText
         BackgroundImageLayout = ImageLayout.None
         ClientSize = New Size(916, 754)
-        Controls.Add(lblwelcomeuser)
         Controls.Add(Panel1)
         Controls.Add(Panel3)
         FormBorderStyle = FormBorderStyle.Fixed3D
@@ -226,18 +213,16 @@ Partial Class dashboard
         CType(PictureBox1, ComponentModel.ISupportInitialize).EndInit()
         Panel3.ResumeLayout(False)
         ResumeLayout(False)
-        PerformLayout()
     End Sub
 
     Friend WithEvents Panel1 As Panel
     Friend WithEvents Button6 As Button
-    Friend WithEvents Button5 As Button
-    Friend WithEvents Button4 As Button
-    Friend WithEvents Button3 As Button
+    Friend WithEvents btntransfer As Button
+    Friend WithEvents btnwithdrawal As Button
+    Friend WithEvents btndeposit As Button
     Friend WithEvents BTNBALANCEINQUIRY As Button
-    Friend WithEvents Button1 As Button
+    Friend WithEvents btnstatementofaccount As Button
     Friend WithEvents Panel2 As Panel
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents Panel3 As Panel
-    Friend WithEvents lblwelcomeuser As Label
 End Class
