@@ -14,44 +14,32 @@ Public Class UserManagement
         ListView1.Items.Clear()
         While dr.Read()
             Dim lv As New ListViewItem(dr("userid").ToString())
-            lv.SubItems.Add(dr("Account_Number").ToString()) ' ✅ fixed
+            lv.SubItems.Add(dr("Account_Number").ToString())
             lv.SubItems.Add(dr("Name").ToString())
             lv.SubItems.Add(dr("Pin").ToString())
             lv.SubItems.Add(dr("Role").ToString())
             lv.SubItems.Add(dr("Status").ToString())
+            lv.SubItems.Add(dr("Balance").ToString())
             ListView1.Items.Add(lv)
         End While
     End Sub
 
     Private Sub txtsearch_TextChanged(sender As Object, e As EventArgs) Handles txtsearch.TextChanged
         Call Connection()
-        sql = "SELECT * FROM management_table WHERE `Name` LIKE '%" & txtsearch.Text & "%' OR `Account_Number` LIKE '%" & txtsearch.Text & "%'" ' ✅ fixed
-        cmd = New MySqlCommand(sql, cn)
+        sql = "SELECT * FROM management_table WHERE `Name` Like '%" & txtsearch.Text & "%' OR `Account_Number` LIKE '%" & txtsearch.Text & "%'" ' ✅ fixed
+            cmd = New MySqlCommand(sql, cn)
         dr = cmd.ExecuteReader
         ListView1.Items.Clear()
         While dr.Read()
             Dim lv As New ListViewItem(dr("userid").ToString())
-            lv.SubItems.Add(dr("Account_Number").ToString()) ' ✅ fixed
+            lv.SubItems.Add(dr("Account_Number").ToString())
             lv.SubItems.Add(dr("Name").ToString())
             lv.SubItems.Add(dr("Pin").ToString())
             lv.SubItems.Add(dr("Role").ToString())
             lv.SubItems.Add(dr("Status").ToString())
+            lv.SubItems.Add(dr("Balance").ToString())
             ListView1.Items.Add(lv)
         End While
-    End Sub
-
-    Private Sub CheckIfExist()
-        Call Connection()
-        sql = "SELECT * FROM management_table WHERE Account_Number = @AccountNumber" ' ✅ fixed
-        cmd = New MySqlCommand(sql, cn)
-        cmd.Parameters.AddWithValue("@AccountNumber", txtaccountnumber.Text)
-        dr = cmd.ExecuteReader
-        If dr.Read() = True Then
-            MessageBox.Show("Account Number Already Exist", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-            txtaccountnumber.Clear()
-            txtaccountnumber.Focus()
-        End If
-        dr.Close()
     End Sub
 
     Private Sub btnsave_Click(sender As Object, e As EventArgs) Handles btnsave.Click
@@ -72,6 +60,7 @@ Public Class UserManagement
             .Parameters.AddWithValue("@Pin", txtpin.Text)
             .Parameters.AddWithValue("@Role", cborole.Text)
             .Parameters.AddWithValue("@Status", cbostatus.Text)
+            .Parameters.AddWithValue("@Balance", btnbalance.Text)
             .ExecuteNonQuery()
         End With
         MsgBox("Record Saved Successfully", vbInformation, "Information")
@@ -86,6 +75,7 @@ Public Class UserManagement
             txtpin.Text = ListView1.SelectedItems(0).SubItems(3).Text
             cborole.Text = ListView1.SelectedItems(0).SubItems(4).Text
             cbostatus.Text = ListView1.SelectedItems(0).SubItems(5).Text
+            btnbalance.Text = ListView1.SelectedItems(0).SubItems(6).Text
         End If
     End Sub
 
@@ -95,6 +85,20 @@ Public Class UserManagement
         Else
             CheckIfExist()
         End If
+    End Sub
+
+    Private Sub CheckIfExist()
+        Call Connection()
+        sql = "SELECT * FROM management_table WHERE Account_Number = @AccountNumber"
+        cmd = New MySqlCommand(sql, cn)
+        cmd.Parameters.AddWithValue("@AccountNumber", txtaccountnumber.Text)
+        dr = cmd.ExecuteReader
+        If dr.Read() = True Then
+            MessageBox.Show("Account Number Already Exist", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            txtaccountnumber.Clear()
+            txtaccountnumber.Focus()
+        End If
+        dr.Close()
     End Sub
 
     Private Sub UpdateTable()
@@ -114,7 +118,7 @@ Public Class UserManagement
         Call LoadData()
     End Sub
 
-    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
+    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles btndelete.Click
         Call Connection()
         If MsgBox("Do you want to delete this record?", vbQuestion + vbYesNo, "Confirmation") = vbYes Then
             sql = "DELETE FROM management_table WHERE userid=@userid"

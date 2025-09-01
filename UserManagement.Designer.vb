@@ -33,11 +33,12 @@ Partial Class UserManagement
         ColumnHeader5 = New ColumnHeader()
         ColumnHeader6 = New ColumnHeader()
         ColumnHeader7 = New ColumnHeader()
+        ColumnHeader4 = New ColumnHeader()
         txtsearch = New TextBox()
         Label2 = New Label()
         btnsave = New Button()
         btnupdate = New Button()
-        Button3 = New Button()
+        btndelete = New Button()
         Label3 = New Label()
         Label4 = New Label()
         Label5 = New Label()
@@ -50,6 +51,8 @@ Partial Class UserManagement
         txtpin = New TextBox()
         cborole = New ComboBox()
         cbostatus = New ComboBox()
+        btnbalance = New TextBox()
+        Label9 = New Label()
         Panel1.SuspendLayout()
         CType(PictureBox1, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
@@ -60,9 +63,10 @@ Partial Class UserManagement
         Panel1.Controls.Add(PictureBox1)
         Panel1.Controls.Add(Label1)
         Panel1.Dock = DockStyle.Top
+        Panel1.ImeMode = ImeMode.Hiragana
         Panel1.Location = New Point(0, 0)
         Panel1.Name = "Panel1"
-        Panel1.Size = New Size(1427, 90)
+        Panel1.Size = New Size(1895, 90)
         Panel1.TabIndex = 1
         ' 
         ' PictureBox1
@@ -90,14 +94,14 @@ Partial Class UserManagement
         ' ListView1
         ' 
         ListView1.BackColor = SystemColors.InactiveCaptionText
-        ListView1.Columns.AddRange(New ColumnHeader() {ColumnHeader1, ColumnHeader2, ColumnHeader3, ColumnHeader5, ColumnHeader6, ColumnHeader7})
+        ListView1.Columns.AddRange(New ColumnHeader() {ColumnHeader1, ColumnHeader2, ColumnHeader3, ColumnHeader5, ColumnHeader6, ColumnHeader7, ColumnHeader4})
         ListView1.Font = New Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
         ListView1.ForeColor = SystemColors.Window
         ListView1.FullRowSelect = True
         ListView1.GridLines = True
-        ListView1.Location = New Point(12, 175)
+        ListView1.Location = New Point(13, 181)
         ListView1.Name = "ListView1"
-        ListView1.Size = New Size(1398, 371)
+        ListView1.Size = New Size(1652, 371)
         ListView1.TabIndex = 2
         ListView1.UseCompatibleStateImageBehavior = False
         ListView1.View = View.Details
@@ -110,7 +114,7 @@ Partial Class UserManagement
         ' ColumnHeader2
         ' 
         ColumnHeader2.Text = "Account Number"
-        ColumnHeader2.Width = 230
+        ColumnHeader2.Width = 220
         ' 
         ' ColumnHeader3
         ' 
@@ -131,6 +135,11 @@ Partial Class UserManagement
         ' 
         ColumnHeader7.Text = "Status"
         ColumnHeader7.Width = 150
+        ' 
+        ' ColumnHeader4
+        ' 
+        ColumnHeader4.Text = "Balance"
+        ColumnHeader4.Width = 150
         ' 
         ' txtsearch
         ' 
@@ -153,6 +162,7 @@ Partial Class UserManagement
         ' 
         ' btnsave
         ' 
+        btnsave.AutoSize = True
         btnsave.BackColor = Color.Goldenrod
         btnsave.FlatAppearance.BorderSize = 0
         btnsave.FlatAppearance.MouseDownBackColor = Color.Goldenrod
@@ -160,7 +170,7 @@ Partial Class UserManagement
         btnsave.FlatStyle = FlatStyle.Flat
         btnsave.Font = New Font("Segoe UI Semibold", 12F, FontStyle.Bold)
         btnsave.ForeColor = SystemColors.ActiveCaptionText
-        btnsave.Location = New Point(665, 845)
+        btnsave.Location = New Point(915, 834)
         btnsave.Name = "btnsave"
         btnsave.Size = New Size(246, 106)
         btnsave.TabIndex = 5
@@ -169,6 +179,7 @@ Partial Class UserManagement
         ' 
         ' btnupdate
         ' 
+        btnupdate.AutoSize = True
         btnupdate.BackColor = Color.Goldenrod
         btnupdate.FlatAppearance.BorderSize = 0
         btnupdate.FlatAppearance.MouseDownBackColor = Color.Goldenrod
@@ -176,28 +187,29 @@ Partial Class UserManagement
         btnupdate.FlatStyle = FlatStyle.Flat
         btnupdate.Font = New Font("Segoe UI Semibold", 12F, FontStyle.Bold)
         btnupdate.ForeColor = SystemColors.ActiveCaptionText
-        btnupdate.Location = New Point(917, 845)
+        btnupdate.Location = New Point(1167, 834)
         btnupdate.Name = "btnupdate"
         btnupdate.Size = New Size(246, 106)
         btnupdate.TabIndex = 6
         btnupdate.Text = "Update"
         btnupdate.UseVisualStyleBackColor = False
         ' 
-        ' Button3
+        ' btndelete
         ' 
-        Button3.BackColor = Color.Goldenrod
-        Button3.FlatAppearance.BorderSize = 0
-        Button3.FlatAppearance.MouseDownBackColor = Color.Goldenrod
-        Button3.FlatAppearance.MouseOverBackColor = Color.DarkGoldenrod
-        Button3.FlatStyle = FlatStyle.Flat
-        Button3.Font = New Font("Segoe UI Semibold", 12F, FontStyle.Bold)
-        Button3.ForeColor = SystemColors.ActiveCaptionText
-        Button3.Location = New Point(1169, 845)
-        Button3.Name = "Button3"
-        Button3.Size = New Size(246, 106)
-        Button3.TabIndex = 7
-        Button3.Text = "Delete"
-        Button3.UseVisualStyleBackColor = False
+        btndelete.AutoSize = True
+        btndelete.BackColor = Color.Goldenrod
+        btndelete.FlatAppearance.BorderSize = 0
+        btndelete.FlatAppearance.MouseDownBackColor = Color.Goldenrod
+        btndelete.FlatAppearance.MouseOverBackColor = Color.DarkGoldenrod
+        btndelete.FlatStyle = FlatStyle.Flat
+        btndelete.Font = New Font("Segoe UI Semibold", 12F, FontStyle.Bold)
+        btndelete.ForeColor = SystemColors.ActiveCaptionText
+        btndelete.Location = New Point(1419, 834)
+        btndelete.Name = "btndelete"
+        btndelete.Size = New Size(246, 106)
+        btndelete.TabIndex = 7
+        btndelete.Text = "Delete"
+        btndelete.UseVisualStyleBackColor = False
         ' 
         ' Label3
         ' 
@@ -215,7 +227,7 @@ Partial Class UserManagement
         Label4.AutoSize = True
         Label4.Font = New Font("Segoe UI Semibold", 14F, FontStyle.Bold)
         Label4.ForeColor = Color.Goldenrod
-        Label4.Location = New Point(35, 671)
+        Label4.Location = New Point(35, 679)
         Label4.Name = "Label4"
         Label4.Size = New Size(233, 38)
         Label4.TabIndex = 9
@@ -226,7 +238,7 @@ Partial Class UserManagement
         Label5.AutoSize = True
         Label5.Font = New Font("Segoe UI Semibold", 14F, FontStyle.Bold)
         Label5.ForeColor = Color.Goldenrod
-        Label5.Location = New Point(35, 755)
+        Label5.Location = New Point(35, 760)
         Label5.Name = "Label5"
         Label5.Size = New Size(93, 38)
         Label5.TabIndex = 10
@@ -237,7 +249,7 @@ Partial Class UserManagement
         Label6.AutoSize = True
         Label6.Font = New Font("Segoe UI Semibold", 14F, FontStyle.Bold)
         Label6.ForeColor = Color.Goldenrod
-        Label6.Location = New Point(757, 752)
+        Label6.Location = New Point(1049, 743)
         Label6.Name = "Label6"
         Label6.Size = New Size(94, 38)
         Label6.TabIndex = 13
@@ -248,7 +260,7 @@ Partial Class UserManagement
         Label7.AutoSize = True
         Label7.Font = New Font("Segoe UI Semibold", 14F, FontStyle.Bold)
         Label7.ForeColor = Color.Goldenrod
-        Label7.Location = New Point(757, 671)
+        Label7.Location = New Point(1049, 662)
         Label7.Name = "Label7"
         Label7.Size = New Size(72, 38)
         Label7.TabIndex = 12
@@ -259,7 +271,7 @@ Partial Class UserManagement
         Label8.AutoSize = True
         Label8.Font = New Font("Segoe UI Semibold", 14F, FontStyle.Bold)
         Label8.ForeColor = Color.Goldenrod
-        Label8.Location = New Point(757, 596)
+        Label8.Location = New Point(1049, 587)
         Label8.Name = "Label8"
         Label8.Size = New Size(56, 38)
         Label8.TabIndex = 11
@@ -293,7 +305,7 @@ Partial Class UserManagement
         ' txtpin
         ' 
         txtpin.Font = New Font("Segoe UI Semibold", 14F, FontStyle.Bold)
-        txtpin.Location = New Point(968, 589)
+        txtpin.Location = New Point(1260, 580)
         txtpin.Name = "txtpin"
         txtpin.Size = New Size(405, 45)
         txtpin.TabIndex = 17
@@ -303,7 +315,7 @@ Partial Class UserManagement
         cborole.Font = New Font("Segoe UI", 14F)
         cborole.FormattingEnabled = True
         cborole.Items.AddRange(New Object() {"Admin", "User"})
-        cborole.Location = New Point(968, 671)
+        cborole.Location = New Point(1260, 662)
         cborole.Name = "cborole"
         cborole.Size = New Size(405, 46)
         cborole.TabIndex = 18
@@ -313,17 +325,40 @@ Partial Class UserManagement
         cbostatus.Font = New Font("Segoe UI", 14F)
         cbostatus.FormattingEnabled = True
         cbostatus.Items.AddRange(New Object() {"Active", "Deactivated"})
-        cbostatus.Location = New Point(968, 752)
+        cbostatus.Location = New Point(1260, 743)
         cbostatus.Name = "cbostatus"
         cbostatus.Size = New Size(405, 46)
         cbostatus.TabIndex = 19
+        ' 
+        ' btnbalance
+        ' 
+        btnbalance.Font = New Font("Segoe UI Semibold", 14F, FontStyle.Bold)
+        btnbalance.Location = New Point(274, 829)
+        btnbalance.Name = "btnbalance"
+        btnbalance.ReadOnly = True
+        btnbalance.Size = New Size(405, 45)
+        btnbalance.TabIndex = 21
+        btnbalance.Text = vbCrLf
+        ' 
+        ' Label9
+        ' 
+        Label9.AutoSize = True
+        Label9.Font = New Font("Segoe UI Semibold", 14F, FontStyle.Bold)
+        Label9.ForeColor = Color.Goldenrod
+        Label9.Location = New Point(35, 832)
+        Label9.Name = "Label9"
+        Label9.Size = New Size(115, 38)
+        Label9.TabIndex = 20
+        Label9.Text = "Balance" & vbCrLf
         ' 
         ' UserManagement
         ' 
         AutoScaleDimensions = New SizeF(10F, 25F)
         AutoScaleMode = AutoScaleMode.Font
         BackColor = SystemColors.ActiveCaptionText
-        ClientSize = New Size(1427, 964)
+        ClientSize = New Size(1895, 964)
+        Controls.Add(btnbalance)
+        Controls.Add(Label9)
         Controls.Add(cbostatus)
         Controls.Add(cborole)
         Controls.Add(txtpin)
@@ -336,7 +371,7 @@ Partial Class UserManagement
         Controls.Add(Label5)
         Controls.Add(Label4)
         Controls.Add(Label3)
-        Controls.Add(Button3)
+        Controls.Add(btndelete)
         Controls.Add(btnupdate)
         Controls.Add(btnsave)
         Controls.Add(Label2)
@@ -368,7 +403,7 @@ Partial Class UserManagement
     Friend WithEvents Label2 As Label
     Friend WithEvents btnsave As Button
     Friend WithEvents btnupdate As Button
-    Friend WithEvents Button3 As Button
+    Friend WithEvents btndelete As Button
     Friend WithEvents Label3 As Label
     Friend WithEvents Label4 As Label
     Friend WithEvents Label5 As Label
@@ -382,4 +417,7 @@ Partial Class UserManagement
     Friend WithEvents cborole As ComboBox
     Friend WithEvents cbostatus As ComboBox
     Friend WithEvents PictureBox1 As PictureBox
+    Friend WithEvents ColumnHeader4 As ColumnHeader
+    Friend WithEvents btnbalance As TextBox
+    Friend WithEvents Label9 As Label
 End Class

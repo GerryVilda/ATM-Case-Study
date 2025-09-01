@@ -119,7 +119,7 @@ Partial Class dashboard
         btntransfer.FlatStyle = FlatStyle.Flat
         btntransfer.Font = New Font("Segoe UI", 16F, FontStyle.Bold)
         btntransfer.ForeColor = Color.Black
-        btntransfer.Location = New Point(23, 343)
+        btntransfer.Location = New Point(23, 340)
         btntransfer.Name = "btntransfer"
         btntransfer.Size = New Size(510, 97)
         btntransfer.TabIndex = 5
@@ -137,7 +137,7 @@ Partial Class dashboard
         btnwithdrawal.FlatStyle = FlatStyle.Flat
         btnwithdrawal.Font = New Font("Segoe UI", 16F, FontStyle.Bold)
         btnwithdrawal.ForeColor = Color.Black
-        btnwithdrawal.Location = New Point(-143, 237)
+        btnwithdrawal.Location = New Point(23, 237)
         btnwithdrawal.Name = "btnwithdrawal"
         btnwithdrawal.Size = New Size(510, 97)
         btnwithdrawal.TabIndex = 4
