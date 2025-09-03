@@ -57,7 +57,7 @@ Partial Class frmtransfer
         btntransfer.Name = "btntransfer"
         btntransfer.Size = New Size(266, 120)
         btntransfer.TabIndex = 19
-        btntransfer.Text = "Withdraw"
+        btntransfer.Text = "Transfer"
         btntransfer.UseVisualStyleBackColor = False
         ' 
         ' txttransfer
