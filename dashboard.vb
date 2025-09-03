@@ -25,7 +25,11 @@ Public Class dashboard
         ChildForm(frmtransfer)
     End Sub
 
-    Private Sub Button6_Click(sender As Object, e As EventArgs) Handles Button6.Click
+    Private Sub btnstatementofaccount_Click(sender As Object, e As EventArgs) Handles btnstatementofaccount.Click
+        ChildForm(frmsoa)
+    End Sub
+
+    Private Sub Button6_Click(sender As Object, e As EventArgs) Handles btnlogout.Click
         Me.Close()
     End Sub
 
@@ -47,10 +51,6 @@ Public Class dashboard
         End If
 
         dr.Close()
-    End Sub
-
-    Private Sub btnstatementofaccount_Click(sender As Object, e As EventArgs) Handles btnstatementofaccount.Click
-
     End Sub
 End Class
 

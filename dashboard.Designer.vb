@@ -23,7 +23,7 @@ Partial Class dashboard
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(dashboard))
-        Button6 = New Button()
+        btnlogout = New Button()
         btnstatementofaccount = New Button()
         PictureBox1 = New PictureBox()
         btntransfer = New Button()
@@ -37,23 +37,23 @@ Partial Class dashboard
         PanelButtons.SuspendLayout()
         SuspendLayout()
         ' 
-        ' Button6
+        ' btnlogout
         ' 
-        Button6.BackColor = SystemColors.ActiveCaptionText
-        Button6.BackgroundImageLayout = ImageLayout.None
-        Button6.Cursor = Cursors.Hand
-        Button6.FlatAppearance.BorderSize = 0
-        Button6.FlatAppearance.MouseDownBackColor = Color.FromArgb(CByte(24), CByte(24), CByte(24))
-        Button6.FlatAppearance.MouseOverBackColor = Color.FromArgb(CByte(73), CByte(73), CByte(73))
-        Button6.FlatStyle = FlatStyle.Flat
-        Button6.Font = New Font("Segoe UI Semibold", 14F, FontStyle.Bold)
-        Button6.ForeColor = Color.Goldenrod
-        Button6.Location = New Point(1036, 12)
-        Button6.Name = "Button6"
-        Button6.Size = New Size(277, 97)
-        Button6.TabIndex = 6
-        Button6.Text = "LOGOUT"
-        Button6.UseVisualStyleBackColor = False
+        btnlogout.BackColor = SystemColors.ActiveCaptionText
+        btnlogout.BackgroundImageLayout = ImageLayout.None
+        btnlogout.Cursor = Cursors.Hand
+        btnlogout.FlatAppearance.BorderSize = 0
+        btnlogout.FlatAppearance.MouseDownBackColor = Color.FromArgb(CByte(24), CByte(24), CByte(24))
+        btnlogout.FlatAppearance.MouseOverBackColor = Color.FromArgb(CByte(73), CByte(73), CByte(73))
+        btnlogout.FlatStyle = FlatStyle.Flat
+        btnlogout.Font = New Font("Segoe UI Semibold", 14F, FontStyle.Bold)
+        btnlogout.ForeColor = Color.Goldenrod
+        btnlogout.Location = New Point(1036, 12)
+        btnlogout.Name = "btnlogout"
+        btnlogout.Size = New Size(277, 97)
+        btnlogout.TabIndex = 6
+        btnlogout.Text = "LOGOUT"
+        btnlogout.UseVisualStyleBackColor = False
         ' 
         ' btnstatementofaccount
         ' 
@@ -179,7 +179,7 @@ Partial Class dashboard
         PanelShow.ForeColor = Color.FromArgb(CByte(212), CByte(175), CByte(55))
         PanelShow.Location = New Point(588, 300)
         PanelShow.Name = "PanelShow"
-        PanelShow.Size = New Size(705, 623)
+        PanelShow.Size = New Size(716, 623)
         PanelShow.TabIndex = 7
         ' 
         ' lblusername
@@ -202,7 +202,7 @@ Partial Class dashboard
         ClientSize = New Size(1316, 935)
         Controls.Add(lblusername)
         Controls.Add(PanelShow)
-        Controls.Add(Button6)
+        Controls.Add(btnlogout)
         Controls.Add(PictureBox1)
         Controls.Add(PanelButtons)
         FormBorderStyle = FormBorderStyle.Fixed3D
@@ -214,7 +214,7 @@ Partial Class dashboard
         ResumeLayout(False)
         PerformLayout()
     End Sub
-    Friend WithEvents Button6 As Button
+    Friend WithEvents btnlogout As Button
     Friend WithEvents btntransfer As Button
     Friend WithEvents btnwithdrawal As Button
     Friend WithEvents btndeposit As Button

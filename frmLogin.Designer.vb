@@ -28,6 +28,7 @@ Partial Class frmLogin
         txtloginusername = New TextBox()
         Label1 = New Label()
         PictureBox1 = New PictureBox()
+        Panel1 = New Panel()
         CType(PictureBox1, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
@@ -69,7 +70,9 @@ Partial Class frmLogin
         ' Label1
         ' 
         Label1.AutoSize = True
+        Label1.BackColor = Color.Transparent
         Label1.Font = New Font("Segoe UI Semibold", 36F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Label1.ForeColor = SystemColors.ButtonHighlight
         Label1.Location = New Point(715, 60)
         Label1.Name = "Label1"
         Label1.Size = New Size(541, 192)
@@ -79,24 +82,33 @@ Partial Class frmLogin
         ' PictureBox1
         ' 
         PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), Image)
-        PictureBox1.Location = New Point(45, 110)
+        PictureBox1.Location = New Point(1, 168)
         PictureBox1.Name = "PictureBox1"
-        PictureBox1.Size = New Size(616, 573)
+        PictureBox1.Size = New Size(659, 472)
         PictureBox1.SizeMode = PictureBoxSizeMode.StretchImage
         PictureBox1.TabIndex = 0
         PictureBox1.TabStop = False
+        ' 
+        ' Panel1
+        ' 
+        Panel1.BackColor = Color.Black
+        Panel1.Location = New Point(666, -3)
+        Panel1.Name = "Panel1"
+        Panel1.Size = New Size(634, 815)
+        Panel1.TabIndex = 4
         ' 
         ' frmLogin
         ' 
         AutoScaleDimensions = New SizeF(10F, 25F)
         AutoScaleMode = AutoScaleMode.Font
-        BackColor = Color.FromArgb(CByte(18), CByte(18), CByte(18))
+        BackColor = Color.Black
         ClientSize = New Size(1297, 805)
+        Controls.Add(PictureBox1)
         Controls.Add(Label1)
         Controls.Add(btnlogin)
         Controls.Add(txtloginpassword)
-        Controls.Add(PictureBox1)
         Controls.Add(txtloginusername)
+        Controls.Add(Panel1)
         ForeColor = SystemColors.ButtonHighlight
         FormBorderStyle = FormBorderStyle.Fixed3D
         MaximizeBox = False
@@ -112,5 +124,6 @@ Partial Class frmLogin
     Friend WithEvents btnlogin As Button
     Friend WithEvents Label1 As Label
     Friend WithEvents PictureBox1 As PictureBox
+    Friend WithEvents Panel1 As Panel
 
 End Class

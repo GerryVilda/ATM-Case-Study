@@ -89,7 +89,6 @@ Partial Class frmDeposit
         Controls.Add(Label1)
         FormBorderStyle = FormBorderStyle.None
         Name = "frmDeposit"
-        Text = "frmDeposit"
         CType(PictureBox1, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)
         PerformLayout()

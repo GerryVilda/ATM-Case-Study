@@ -35,6 +35,7 @@ Partial Class frmbalance
         txtbalance.Font = New Font("Segoe UI Semibold", 36F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         txtbalance.Location = New Point(-1, 268)
         txtbalance.Name = "txtbalance"
+        txtbalance.PlaceholderText = "Remaining Balance"
         txtbalance.ReadOnly = True
         txtbalance.Size = New Size(706, 103)
         txtbalance.TabIndex = 11

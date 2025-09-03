@@ -20,6 +20,7 @@ Public Class UserManagement
             lv.SubItems.Add(dr("Role").ToString())
             lv.SubItems.Add(dr("Status").ToString())
             lv.SubItems.Add(dr("Balance").ToString())
+            lv.SubItems.Add(dr("Attempts").ToString())
             ListView1.Items.Add(lv)
         End While
     End Sub
@@ -38,6 +39,7 @@ Public Class UserManagement
             lv.SubItems.Add(dr("Role").ToString())
             lv.SubItems.Add(dr("Status").ToString())
             lv.SubItems.Add(dr("Balance").ToString())
+            lv.SubItems.Add(dr("Attempts").ToString())
             ListView1.Items.Add(lv)
         End While
     End Sub
@@ -58,7 +60,7 @@ Public Class UserManagement
 
     Private Sub Save()
         Call Connection()
-        sql = "INSERT INTO management_table (Account_Number, Name, Pin, Role, Status) VALUES (@AccountNumber, @Name, @Pin, @Role, @Status)" ' ✅ fixed
+        sql = "INSERT INTO management_table (Account_Number, Name, Pin, Role, Status, Attempts) VALUES (@AccountNumber, @Name, @Pin, @Role, @Status, @Attempts)"
         cmd = New MySqlCommand(sql, cn)
         With cmd
             .Parameters.AddWithValue("@AccountNumber", txtaccountnumber.Text)
@@ -67,10 +69,16 @@ Public Class UserManagement
             .Parameters.AddWithValue("@Role", cborole.Text)
             .Parameters.AddWithValue("@Status", cbostatus.Text)
             .Parameters.AddWithValue("@Balance", btnbalance.Text)
+            .Parameters.AddWithValue("@Attempts", txtattempts.Text)
             .ExecuteNonQuery()
         End With
         MsgBox("Record Saved Successfully", vbInformation, "Information")
         Call LoadData()
+        txtaccountnumber.Clear()
+        txtname.Clear()
+        txtpin.Clear()
+        txtuserid.Clear()
+        txtattempts.Clear()
     End Sub
 
     Private Sub btnsave_Click(sender As Object, e As EventArgs) Handles btnsave.Click
@@ -91,6 +99,7 @@ Public Class UserManagement
             cborole.Text = ListView1.SelectedItems(0).SubItems(4).Text
             cbostatus.Text = ListView1.SelectedItems(0).SubItems(5).Text
             btnbalance.Text = ListView1.SelectedItems(0).SubItems(6).Text
+            txtattempts.Text = ListView1.SelectedItems(0).SubItems(7).Text
         End If
     End Sub
 
@@ -104,7 +113,7 @@ Public Class UserManagement
 
     Private Sub UpdateTable()
         Call Connection()
-        sql = "UPDATE management_table SET Account_Number=@AccountNumber, Name=@Name, Pin=@Pin, Role=@Role, Status=@Status WHERE userid=@userid" ' ✅ fixed
+        sql = "UPDATE management_table SET Account_Number=@AccountNumber, Name=@Name, Pin=@Pin, Role=@Role, Status=@Status, Attempts=@Attempts WHERE userid=@userid"
         cmd = New MySqlCommand(sql, cn)
         With cmd
             .Parameters.AddWithValue("@AccountNumber", txtaccountnumber.Text)
@@ -113,6 +122,7 @@ Public Class UserManagement
             .Parameters.AddWithValue("@Role", cborole.Text)
             .Parameters.AddWithValue("@Status", cbostatus.Text)
             .Parameters.AddWithValue("@userid", txtuserid.Text)
+            .Parameters.AddWithValue("@Attempts", txtattempts.Text)
             .ExecuteNonQuery()
         End With
         MsgBox("Record Updated Successfully", vbInformation, "Information")
@@ -121,6 +131,7 @@ Public Class UserManagement
         txtname.Clear()
         txtpin.Clear()
         txtuserid.Clear()
+        txtattempts.Clear()
     End Sub
 
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles btndelete.Click

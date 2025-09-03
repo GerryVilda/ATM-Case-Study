@@ -29,7 +29,9 @@ Partial Class frmtransfer
         Label1 = New Label()
         txtamount = New TextBox()
         Label2 = New Label()
+        FileSystemWatcher1 = New IO.FileSystemWatcher()
         CType(PictureBox1, ComponentModel.ISupportInitialize).BeginInit()
+        CType(FileSystemWatcher1, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
         ' PictureBox1
@@ -98,6 +100,11 @@ Partial Class frmtransfer
         Label2.TabIndex = 21
         Label2.Text = "Enter amount to transfer"
         ' 
+        ' FileSystemWatcher1
+        ' 
+        FileSystemWatcher1.EnableRaisingEvents = True
+        FileSystemWatcher1.SynchronizingObject = Me
+        ' 
         ' frmtransfer
         ' 
         AutoScaleDimensions = New SizeF(10F, 25F)
@@ -114,6 +121,7 @@ Partial Class frmtransfer
         Name = "frmtransfer"
         Text = "frmtransfer"
         CType(PictureBox1, ComponentModel.ISupportInitialize).EndInit()
+        CType(FileSystemWatcher1, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)
         PerformLayout()
     End Sub
@@ -124,4 +132,5 @@ Partial Class frmtransfer
     Friend WithEvents Label1 As Label
     Friend WithEvents txtamount As TextBox
     Friend WithEvents Label2 As Label
+    Friend WithEvents FileSystemWatcher1 As IO.FileSystemWatcher
 End Class
