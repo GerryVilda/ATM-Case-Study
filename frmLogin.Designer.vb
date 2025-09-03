@@ -23,38 +23,13 @@ Partial Class frmLogin
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmLogin))
-        PictureBox1 = New PictureBox()
-        Panel1 = New Panel()
         btnlogin = New Button()
         txtloginpassword = New TextBox()
         txtloginusername = New TextBox()
+        Label1 = New Label()
+        PictureBox1 = New PictureBox()
         CType(PictureBox1, ComponentModel.ISupportInitialize).BeginInit()
-        Panel1.SuspendLayout()
         SuspendLayout()
-        ' 
-        ' PictureBox1
-        ' 
-        PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), Image)
-        PictureBox1.Location = New Point(-3, 76)
-        PictureBox1.Name = "PictureBox1"
-        PictureBox1.Size = New Size(647, 275)
-        PictureBox1.SizeMode = PictureBoxSizeMode.StretchImage
-        PictureBox1.TabIndex = 0
-        PictureBox1.TabStop = False
-        ' 
-        ' Panel1
-        ' 
-        Panel1.BackColor = Color.FromArgb(CByte(26), CByte(22), CByte(22))
-        Panel1.BackgroundImageLayout = ImageLayout.None
-        Panel1.BorderStyle = BorderStyle.Fixed3D
-        Panel1.Controls.Add(btnlogin)
-        Panel1.Controls.Add(txtloginpassword)
-        Panel1.Controls.Add(txtloginusername)
-        Panel1.ForeColor = Color.FromArgb(CByte(212), CByte(175), CByte(55))
-        Panel1.Location = New Point(63, 408)
-        Panel1.Name = "Panel1"
-        Panel1.Size = New Size(506, 368)
-        Panel1.TabIndex = 1
         ' 
         ' btnlogin
         ' 
@@ -62,9 +37,9 @@ Partial Class frmLogin
         btnlogin.FlatStyle = FlatStyle.Flat
         btnlogin.Font = New Font("Arial", 16F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         btnlogin.ForeColor = SystemColors.ActiveCaptionText
-        btnlogin.Location = New Point(35, 232)
+        btnlogin.Location = New Point(742, 667)
         btnlogin.Name = "btnlogin"
-        btnlogin.Size = New Size(427, 71)
+        btnlogin.Size = New Size(474, 71)
         btnlogin.TabIndex = 2
         btnlogin.Text = "LOGIN"
         btnlogin.UseVisualStyleBackColor = False
@@ -72,10 +47,10 @@ Partial Class frmLogin
         ' txtloginpassword
         ' 
         txtloginpassword.Font = New Font("Segoe UI Semibold", 18F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        txtloginpassword.Location = New Point(35, 138)
+        txtloginpassword.Location = New Point(742, 483)
         txtloginpassword.Name = "txtloginpassword"
         txtloginpassword.PlaceholderText = "Password"
-        txtloginpassword.Size = New Size(427, 55)
+        txtloginpassword.Size = New Size(474, 55)
         txtloginpassword.TabIndex = 1
         txtloginpassword.TabStop = False
         txtloginpassword.UseSystemPasswordChar = True
@@ -84,21 +59,44 @@ Partial Class frmLogin
         ' 
         txtloginusername.AccessibleName = "Username"
         txtloginusername.Font = New Font("Segoe UI Semibold", 18F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        txtloginusername.Location = New Point(35, 52)
+        txtloginusername.Location = New Point(742, 377)
         txtloginusername.Name = "txtloginusername"
         txtloginusername.PlaceholderText = "Username"
-        txtloginusername.Size = New Size(427, 55)
+        txtloginusername.Size = New Size(474, 55)
         txtloginusername.TabIndex = 0
         txtloginusername.TabStop = False
+        ' 
+        ' Label1
+        ' 
+        Label1.AutoSize = True
+        Label1.Font = New Font("Segoe UI Semibold", 36F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Label1.Location = New Point(715, 60)
+        Label1.Name = "Label1"
+        Label1.Size = New Size(541, 192)
+        Label1.TabIndex = 3
+        Label1.Text = "Sign in to your " & vbCrLf & "      account"
+        ' 
+        ' PictureBox1
+        ' 
+        PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), Image)
+        PictureBox1.Location = New Point(45, 110)
+        PictureBox1.Name = "PictureBox1"
+        PictureBox1.Size = New Size(616, 573)
+        PictureBox1.SizeMode = PictureBoxSizeMode.StretchImage
+        PictureBox1.TabIndex = 0
+        PictureBox1.TabStop = False
         ' 
         ' frmLogin
         ' 
         AutoScaleDimensions = New SizeF(10F, 25F)
         AutoScaleMode = AutoScaleMode.Font
         BackColor = Color.FromArgb(CByte(18), CByte(18), CByte(18))
-        ClientSize = New Size(640, 898)
-        Controls.Add(Panel1)
+        ClientSize = New Size(1297, 805)
+        Controls.Add(Label1)
+        Controls.Add(btnlogin)
+        Controls.Add(txtloginpassword)
         Controls.Add(PictureBox1)
+        Controls.Add(txtloginusername)
         ForeColor = SystemColors.ButtonHighlight
         FormBorderStyle = FormBorderStyle.Fixed3D
         MaximizeBox = False
@@ -106,15 +104,13 @@ Partial Class frmLogin
         StartPosition = FormStartPosition.CenterScreen
         Text = "Login"
         CType(PictureBox1, ComponentModel.ISupportInitialize).EndInit()
-        Panel1.ResumeLayout(False)
-        Panel1.PerformLayout()
         ResumeLayout(False)
+        PerformLayout()
     End Sub
-
-    Friend WithEvents PictureBox1 As PictureBox
-    Friend WithEvents Panel1 As Panel
     Friend WithEvents txtloginpassword As TextBox
     Friend WithEvents txtloginusername As TextBox
     Friend WithEvents btnlogin As Button
+    Friend WithEvents Label1 As Label
+    Friend WithEvents PictureBox1 As PictureBox
 
 End Class

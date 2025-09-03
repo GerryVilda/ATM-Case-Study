@@ -26,8 +26,8 @@ Public Class UserManagement
 
     Private Sub txtsearch_TextChanged(sender As Object, e As EventArgs) Handles txtsearch.TextChanged
         Call Connection()
-        sql = "SELECT * FROM management_table WHERE `Name` Like '%" & txtsearch.Text & "%' OR `Account_Number` LIKE '%" & txtsearch.Text & "%'" ' ✅ fixed
-            cmd = New MySqlCommand(sql, cn)
+        sql = "SELECT * FROM management_table WHERE `Name` Like '%" & txtsearch.Text & "%' Or `Account_Number` Like '%" & txtsearch.Text & "%'"
+        cmd = New MySqlCommand(sql, cn)
         dr = cmd.ExecuteReader
         ListView1.Items.Clear()
         While dr.Read()
@@ -42,12 +42,18 @@ Public Class UserManagement
         End While
     End Sub
 
-    Private Sub btnsave_Click(sender As Object, e As EventArgs) Handles btnsave.Click
-        If MsgBox("Do you want to save this record?", vbQuestion + vbYesNo, "Confirmation") = vbYes Then
-            Save()
+    Private Sub CheckIfExist()
+        Call Connection()
+        sql = "SELECT * FROM management_table WHERE Account_Number='" & txtaccountnumber.Text & "'"
+        cmd = New MySqlCommand(sql, cn)
+        cmd.Parameters.AddWithValue("@userid", txtuserid.Text)
+        dr = cmd.ExecuteReader()
+        If dr.Read() Then
+            MsgBox("Account Number Already Exists", vbExclamation, "Error")
         Else
-            CheckIfExist()
+            Save()
         End If
+
     End Sub
 
     Private Sub Save()
@@ -67,6 +73,15 @@ Public Class UserManagement
         Call LoadData()
     End Sub
 
+    Private Sub btnsave_Click(sender As Object, e As EventArgs) Handles btnsave.Click
+        If MsgBox("Do you want to save this record?", vbQuestion + vbYesNo, "Confirmation") = vbYes Then
+            CheckIfExist()
+        Else
+
+        End If
+    End Sub
+
+
     Private Sub ListView1_Click(sender As Object, e As EventArgs) Handles ListView1.Click
         If ListView1.SelectedItems.Count > 0 Then
             txtuserid.Text = ListView1.SelectedItems(0).SubItems(0).Text
@@ -83,22 +98,8 @@ Public Class UserManagement
         If MsgBox("Do you want to update this record?", vbQuestion + vbYesNo, "Confirmation") = vbYes Then
             UpdateTable()
         Else
-            CheckIfExist()
-        End If
-    End Sub
 
-    Private Sub CheckIfExist()
-        Call Connection()
-        sql = "SELECT * FROM management_table WHERE Account_Number = @AccountNumber"
-        cmd = New MySqlCommand(sql, cn)
-        cmd.Parameters.AddWithValue("@AccountNumber", txtaccountnumber.Text)
-        dr = cmd.ExecuteReader
-        If dr.Read() = True Then
-            MessageBox.Show("Account Number Already Exist", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-            txtaccountnumber.Clear()
-            txtaccountnumber.Focus()
         End If
-        dr.Close()
     End Sub
 
     Private Sub UpdateTable()
@@ -116,6 +117,10 @@ Public Class UserManagement
         End With
         MsgBox("Record Updated Successfully", vbInformation, "Information")
         Call LoadData()
+        txtaccountnumber.Clear()
+        txtname.Clear()
+        txtpin.Clear()
+        txtuserid.Clear()
     End Sub
 
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles btndelete.Click
@@ -128,6 +133,10 @@ Public Class UserManagement
                 .ExecuteNonQuery()
             End With
             MsgBox("Record Deleted Successfully", vbInformation, "Information")
+            txtaccountnumber.Clear()
+            txtname.Clear()
+            txtpin.Clear()
+            txtuserid.Clear()
             Call LoadData()
         End If
     End Sub

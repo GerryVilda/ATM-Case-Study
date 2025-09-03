@@ -85,7 +85,7 @@ Partial Class UserManagement
         Label1.AutoSize = True
         Label1.Font = New Font("Segoe UI", 22F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         Label1.ForeColor = Color.Goldenrod
-        Label1.Location = New Point(519, 9)
+        Label1.Location = New Point(728, 9)
         Label1.Name = "Label1"
         Label1.Size = New Size(406, 60)
         Label1.TabIndex = 0
