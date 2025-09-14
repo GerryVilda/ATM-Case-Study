@@ -52,6 +52,10 @@ Public Class dashboard
 
         dr.Close()
     End Sub
+
+    Private Sub PanelShow_Paint(sender As Object, e As PaintEventArgs) Handles PanelShow.Paint
+
+    End Sub
 End Class
 
 

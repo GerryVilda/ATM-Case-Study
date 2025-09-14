@@ -26,18 +26,19 @@ Partial Class frmsoa
         ColumnHeader2 = New ColumnHeader()
         ColumnHeader3 = New ColumnHeader()
         ColumnHeader1 = New ColumnHeader()
+        ColumnHeader5 = New ColumnHeader()
         ColumnHeader4 = New ColumnHeader()
+        ColumnHeader6 = New ColumnHeader()
         SuspendLayout()
         ' 
         ' ListView1
         ' 
-        ListView1.Columns.AddRange(New ColumnHeader() {ColumnHeader2, ColumnHeader3, ColumnHeader1, ColumnHeader4})
-        ListView1.Dock = DockStyle.Fill
+        ListView1.Columns.AddRange(New ColumnHeader() {ColumnHeader2, ColumnHeader3, ColumnHeader1, ColumnHeader5, ColumnHeader4, ColumnHeader6})
         ListView1.FullRowSelect = True
         ListView1.GridLines = True
         ListView1.Location = New Point(0, 0)
         ListView1.Name = "ListView1"
-        ListView1.Size = New Size(705, 623)
+        ListView1.Size = New Size(709, 623)
         ListView1.TabIndex = 0
         ListView1.UseCompatibleStateImageBehavior = False
         ListView1.View = View.Details
@@ -60,10 +61,22 @@ Partial Class frmsoa
         ColumnHeader1.Text = "Account Number"
         ColumnHeader1.Width = 150
         ' 
+        ' ColumnHeader5
+        ' 
+        ColumnHeader5.DisplayIndex = 5
+        ColumnHeader5.Text = "Transaction Date"
+        ' 
         ' ColumnHeader4
         ' 
-        ColumnHeader4.Text = "TransactionDate"
-        ColumnHeader4.Width = 100
+        ColumnHeader4.DisplayIndex = 3
+        ColumnHeader4.Text = "Sent To"
+        ColumnHeader4.Width = 150
+        ' 
+        ' ColumnHeader6
+        ' 
+        ColumnHeader6.DisplayIndex = 4
+        ColumnHeader6.Text = "Amount"
+        ColumnHeader6.Width = 100
         ' 
         ' frmsoa
         ' 
@@ -82,4 +95,6 @@ Partial Class frmsoa
     Friend WithEvents ColumnHeader2 As ColumnHeader
     Friend WithEvents ColumnHeader3 As ColumnHeader
     Friend WithEvents ColumnHeader4 As ColumnHeader
+    Friend WithEvents ColumnHeader5 As ColumnHeader
+    Friend WithEvents ColumnHeader6 As ColumnHeader
 End Class
