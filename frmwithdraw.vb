@@ -14,11 +14,21 @@ Public Class frmwithdraw
 
         Dim withdrawAmount As Double = CDbl(txtwithdraw.Text)
 
-        If withdrawAmount <= 0 Then
-            MsgBox("Amount must be greater than zero.", vbExclamation, "Error")
+        ' Check if amount is valid
+        If withdrawAmount < 200 Then
+            MsgBox("Minimum withdrawal amount is ₱200.", vbExclamation, "Error")
             Exit Sub
         End If
 
+        If withdrawAmount > 10000 Then
+            MsgBox("Maximum withdrawal amount is ₱10,000.", vbExclamation, "Error")
+            Exit Sub
+        End If
+
+        If withdrawAmount Mod 100 <> 0 Then
+            MsgBox("Withdrawal amount must be in multiples of ₱100 (no coin withdrawals).", vbExclamation, "Error")
+            Exit Sub
+        End If
 
         Call Connection()
         sql = "SELECT Balance FROM management_table WHERE userid=@userid"
@@ -37,14 +47,14 @@ Public Class frmwithdraw
             Exit Sub
         End If
 
-
+        ' Deduct balance
         sql = "UPDATE management_table SET Balance = Balance - @Amount WHERE userid=@userid"
         cmd = New MySqlCommand(sql, cn)
         cmd.Parameters.AddWithValue("@Amount", withdrawAmount)
         cmd.Parameters.AddWithValue("@userid", LoggedInUserId)
         cmd.ExecuteNonQuery()
 
-
+        ' Record transaction
         sql = "INSERT INTO transactions (userid, TransactionType, Amount, TransactionDate) VALUES (@userid, 'Withdrawal', @Amount, NOW())"
         cmd = New MySqlCommand(sql, cn)
         cmd.Parameters.AddWithValue("@userid", LoggedInUserId)
@@ -52,12 +62,13 @@ Public Class frmwithdraw
         cmd.ExecuteNonQuery()
 
         MsgBox("Withdrawal successful!" & vbCrLf &
-               "Amount Withdrawn: ₱" & withdrawAmount.ToString("N2") & vbCrLf &
-               "New Balance: ₱" & (currentBalance - withdrawAmount).ToString("N2"),
-               vbInformation, "Transaction Complete")
+           "Amount Withdrawn: ₱" & withdrawAmount.ToString("N2") & vbCrLf &
+           "New Balance: ₱" & (currentBalance - withdrawAmount).ToString("N2"),
+           vbInformation, "Transaction Complete")
 
         txtwithdraw.Clear()
     End Sub
+
 
     Private Sub Label1_Click(sender As Object, e As EventArgs) Handles Label1.Click
 
