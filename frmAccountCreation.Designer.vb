@@ -23,6 +23,9 @@ Partial Class frmAccountCreation
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Panel1 = New Panel()
+        txtcreatepin = New TextBox()
+        Label8 = New Label()
+        Label7 = New Label()
         dtpbirthday = New DateTimePicker()
         btncreateaccount = New Button()
         txtcreatecpnumber = New TextBox()
@@ -36,9 +39,6 @@ Partial Class frmAccountCreation
         Label4 = New Label()
         Label2 = New Label()
         Label1 = New Label()
-        Label7 = New Label()
-        txtcreatepin = New TextBox()
-        Label8 = New Label()
         Panel1.SuspendLayout()
         SuspendLayout()
         ' 
@@ -65,6 +65,34 @@ Partial Class frmAccountCreation
         Panel1.Name = "Panel1"
         Panel1.Size = New Size(1051, 808)
         Panel1.TabIndex = 0
+        ' 
+        ' txtcreatepin
+        ' 
+        txtcreatepin.Font = New Font("Segoe UI Semibold", 14F, FontStyle.Bold)
+        txtcreatepin.Location = New Point(385, 265)
+        txtcreatepin.Name = "txtcreatepin"
+        txtcreatepin.Size = New Size(511, 45)
+        txtcreatepin.TabIndex = 35
+        ' 
+        ' Label8
+        ' 
+        Label8.AutoSize = True
+        Label8.Font = New Font("Segoe UI Semibold", 14F, FontStyle.Bold)
+        Label8.Location = New Point(17, 268)
+        Label8.Name = "Label8"
+        Label8.Size = New Size(63, 38)
+        Label8.TabIndex = 34
+        Label8.Text = "Pin:"
+        ' 
+        ' Label7
+        ' 
+        Label7.AutoSize = True
+        Label7.Font = New Font("Segoe UI Semibold", 20F, FontStyle.Bold)
+        Label7.Location = New Point(385, 9)
+        Label7.Name = "Label7"
+        Label7.Size = New Size(300, 54)
+        Label7.TabIndex = 33
+        Label7.Text = "Create Account"
         ' 
         ' dtpbirthday
         ' 
@@ -191,34 +219,6 @@ Partial Class frmAccountCreation
         Label1.Size = New Size(152, 38)
         Label1.TabIndex = 0
         Label1.Text = "Username:"
-        ' 
-        ' Label7
-        ' 
-        Label7.AutoSize = True
-        Label7.Font = New Font("Segoe UI Semibold", 20F, FontStyle.Bold)
-        Label7.Location = New Point(385, 9)
-        Label7.Name = "Label7"
-        Label7.Size = New Size(300, 54)
-        Label7.TabIndex = 33
-        Label7.Text = "Create Account"
-        ' 
-        ' txtcreatepin
-        ' 
-        txtcreatepin.Font = New Font("Segoe UI Semibold", 14F, FontStyle.Bold)
-        txtcreatepin.Location = New Point(385, 265)
-        txtcreatepin.Name = "txtcreatepin"
-        txtcreatepin.Size = New Size(511, 45)
-        txtcreatepin.TabIndex = 35
-        ' 
-        ' Label8
-        ' 
-        Label8.AutoSize = True
-        Label8.Font = New Font("Segoe UI Semibold", 14F, FontStyle.Bold)
-        Label8.Location = New Point(17, 268)
-        Label8.Name = "Label8"
-        Label8.Size = New Size(63, 38)
-        Label8.TabIndex = 34
-        Label8.Text = "Pin:"
         ' 
         ' frmAccountCreation
         ' 

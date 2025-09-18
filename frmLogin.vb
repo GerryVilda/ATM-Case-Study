@@ -57,6 +57,10 @@ Public Class frmLogin
                     Else
                         MsgBox("Role not recognized. Contact admin.", vbExclamation, "Error")
                     End If
+                    txtloginusername.Clear()
+                    txtloginpassword.Clear()
+
+
                 End If
 
             Else
@@ -95,6 +99,7 @@ Public Class frmLogin
     Private Sub lnklblAccount_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles lnklblAccount.LinkClicked
         frmAccountCreation.Show()
     End Sub
+
 End Class
 
 

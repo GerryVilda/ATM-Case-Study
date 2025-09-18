@@ -14,7 +14,7 @@ Public Class frmtransfer
 
         Dim toAccount As String = txttransfer.Text.Trim()
         Dim transferAmount As Double = CDbl(txtamount.Text)
-        Dim totalDeduction As Double = transferAmount + 15 ' ₱15 fee
+        Dim totalDeduction As Double = transferAmount + 15
 
         If transferAmount <= 0 Then
             MsgBox("Amount must be greater than zero.", vbExclamation, "Error")
@@ -23,7 +23,7 @@ Public Class frmtransfer
 
         Call Connection()
 
-        ' Check sender balance
+
         sql = "SELECT Balance, PIN FROM management_table WHERE userid=@userid"
         cmd = New MySqlCommand(sql, cn)
         cmd.Parameters.AddWithValue("@userid", LoggedInUserId)
@@ -42,7 +42,7 @@ Public Class frmtransfer
             Exit Sub
         End If
 
-        ' Check recipient account
+
         sql = "SELECT userid FROM management_table WHERE Account_Number=@AccountNumber"
         cmd = New MySqlCommand(sql, cn)
         cmd.Parameters.AddWithValue("@AccountNumber", toAccount)
@@ -53,7 +53,12 @@ Public Class frmtransfer
             Exit Sub
         End If
 
-        ' 🔐 Ask for PIN via MessageBox
+        If recipientId = LoggedInUserId Then
+            MsgBox("You cannot transfer money to your own account.", vbExclamation, "Error")
+            Exit Sub
+        End If
+
+
         Dim enteredPin As String = InputBox("Please enter your PIN to confirm the transfer:", "PIN Confirmation")
         If enteredPin = "" Then
             MsgBox("Transfer cancelled. No PIN entered.", vbExclamation, "Cancelled")
@@ -65,21 +70,21 @@ Public Class frmtransfer
             Exit Sub
         End If
 
-        ' Deduct from sender (with fee)
+
         sql = "UPDATE management_table SET Balance = Balance - @Amount WHERE userid=@userid"
         cmd = New MySqlCommand(sql, cn)
         cmd.Parameters.AddWithValue("@Amount", totalDeduction)
         cmd.Parameters.AddWithValue("@userid", LoggedInUserId)
         cmd.ExecuteNonQuery()
 
-        ' Add to recipient
+
         sql = "UPDATE management_table SET Balance = Balance + @Amount WHERE userid=@RecipientId"
         cmd = New MySqlCommand(sql, cn)
         cmd.Parameters.AddWithValue("@Amount", transferAmount)
         cmd.Parameters.AddWithValue("@RecipientId", recipientId)
         cmd.ExecuteNonQuery()
 
-        ' Insert sender transaction
+
         sql = "INSERT INTO transactions (userid, TransactionType, Amount, TransactionDate, Remarks) " &
               "VALUES (@userid, 'Transfer Sent', @Amount, NOW(), 'Includes ₱15 fee')"
         cmd = New MySqlCommand(sql, cn)
@@ -87,7 +92,7 @@ Public Class frmtransfer
         cmd.Parameters.AddWithValue("@Amount", transferAmount)
         cmd.ExecuteNonQuery()
 
-        ' Insert recipient transaction
+
         sql = "INSERT INTO transactions (userid, TransactionType, Amount, TransactionDate) " &
               "VALUES (@userid, 'Transfer Received', @Amount, NOW())"
         cmd = New MySqlCommand(sql, cn)

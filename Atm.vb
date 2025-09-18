@@ -12,7 +12,7 @@ Module Atm
         cn.Close()
         cn.ConnectionString = "server=localhost;user=root;password=;database=atm"
         cn.Open()
-        MsgBox("Connected to database successfully.")
+        ' MsgBox("Connected to database successfully.")
     End Sub
 
 End Module
