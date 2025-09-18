@@ -134,22 +134,52 @@ Public Class UserManagement
         txtattempts.Clear()
     End Sub
 
-    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles btndelete.Click
+    Private Sub btndelete_Click(sender As Object, e As EventArgs) Handles btndelete.Click
         Call Connection()
+
         If MsgBox("Do you want to delete this record?", vbQuestion + vbYesNo, "Confirmation") = vbYes Then
+
+
+            sql = "INSERT INTO deleted_management_table " &
+              "(Account_Number, Name, username, firstname, lastname, birthdate, cellphone, Pin, Role, Attempts, Status, Balance) " &
+              "SELECT Account_Number, Name, username, firstname, lastname, birthdate, cellphone, Pin, Role, Attempts, Status, Balance " &
+              "FROM management_table WHERE userid=@userid"
+            cmd = New MySqlCommand(sql, cn)
+            cmd.Parameters.AddWithValue("@userid", txtuserid.Text)
+            cmd.ExecuteNonQuery()
+
+
             sql = "DELETE FROM management_table WHERE userid=@userid"
             cmd = New MySqlCommand(sql, cn)
-            With cmd
-                .Parameters.AddWithValue("@userid", txtuserid.Text)
-                .ExecuteNonQuery()
-            End With
-            MsgBox("Record Deleted Successfully", vbInformation, "Information")
+            cmd.Parameters.AddWithValue("@userid", txtuserid.Text)
+            cmd.ExecuteNonQuery()
+
+            MsgBox("Record moved to Deleted table and removed from main table.", vbInformation, "Information")
+
+
             txtaccountnumber.Clear()
             txtname.Clear()
             txtpin.Clear()
             txtuserid.Clear()
+            txtattempts.Clear()
+            btnbalance.Clear()
+
             Call LoadData()
         End If
+    End Sub
+
+
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        frmDataRestoration.Show
+    End Sub
+
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles btnrefresh.Click
+        Call LoadData()
+    End Sub
+
+    Private Sub btnlogout_Click(sender As Object, e As EventArgs) Handles btnlogout.Click
+        Me.Close()
     End Sub
 
 End Class

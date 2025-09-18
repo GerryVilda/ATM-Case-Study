@@ -29,7 +29,9 @@ Partial Class frmLogin
         Label1 = New Label()
         PictureBox1 = New PictureBox()
         Panel1 = New Panel()
+        lnklblAccount = New LinkLabel()
         CType(PictureBox1, ComponentModel.ISupportInitialize).BeginInit()
+        Panel1.SuspendLayout()
         SuspendLayout()
         ' 
         ' btnlogin
@@ -38,7 +40,7 @@ Partial Class frmLogin
         btnlogin.FlatStyle = FlatStyle.Flat
         btnlogin.Font = New Font("Arial", 16F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         btnlogin.ForeColor = SystemColors.ActiveCaptionText
-        btnlogin.Location = New Point(742, 667)
+        btnlogin.Location = New Point(76, 634)
         btnlogin.Name = "btnlogin"
         btnlogin.Size = New Size(474, 71)
         btnlogin.TabIndex = 2
@@ -92,10 +94,26 @@ Partial Class frmLogin
         ' Panel1
         ' 
         Panel1.BackColor = Color.Black
+        Panel1.Controls.Add(lnklblAccount)
+        Panel1.Controls.Add(btnlogin)
         Panel1.Location = New Point(666, -3)
         Panel1.Name = "Panel1"
         Panel1.Size = New Size(634, 815)
         Panel1.TabIndex = 4
+        ' 
+        ' lnklblAccount
+        ' 
+        lnklblAccount.AutoSize = True
+        lnklblAccount.BackColor = Color.Black
+        lnklblAccount.Font = New Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        lnklblAccount.ForeColor = SystemColors.ButtonHighlight
+        lnklblAccount.LinkColor = Color.White
+        lnklblAccount.Location = New Point(226, 708)
+        lnklblAccount.Name = "lnklblAccount"
+        lnklblAccount.Size = New Size(182, 32)
+        lnklblAccount.TabIndex = 0
+        lnklblAccount.TabStop = True
+        lnklblAccount.Text = "Create Account"
         ' 
         ' frmLogin
         ' 
@@ -105,7 +123,6 @@ Partial Class frmLogin
         ClientSize = New Size(1297, 805)
         Controls.Add(PictureBox1)
         Controls.Add(Label1)
-        Controls.Add(btnlogin)
         Controls.Add(txtloginpassword)
         Controls.Add(txtloginusername)
         Controls.Add(Panel1)
@@ -116,6 +133,8 @@ Partial Class frmLogin
         StartPosition = FormStartPosition.CenterScreen
         Text = "Login"
         CType(PictureBox1, ComponentModel.ISupportInitialize).EndInit()
+        Panel1.ResumeLayout(False)
+        Panel1.PerformLayout()
         ResumeLayout(False)
         PerformLayout()
     End Sub
@@ -125,5 +144,6 @@ Partial Class frmLogin
     Friend WithEvents Label1 As Label
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents Panel1 As Panel
+    Friend WithEvents lnklblAccount As LinkLabel
 
 End Class
