@@ -36,7 +36,7 @@ Partial Class frmDeposit
         Label1.BackColor = SystemColors.ActiveCaptionText
         Label1.Font = New Font("Segoe UI Semibold", 28F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         Label1.ForeColor = Color.Goldenrod
-        Label1.Location = New Point(31, 183)
+        Label1.Location = New Point(31, 253)
         Label1.Name = "Label1"
         Label1.Size = New Size(651, 74)
         Label1.TabIndex = 9
@@ -45,7 +45,7 @@ Partial Class frmDeposit
         ' txtdeposit
         ' 
         txtdeposit.Font = New Font("Segoe UI Semibold", 36F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        txtdeposit.Location = New Point(-1, 269)
+        txtdeposit.Location = New Point(-1, 339)
         txtdeposit.Name = "txtdeposit"
         txtdeposit.PlaceholderText = "Enter Amount"
         txtdeposit.Size = New Size(703, 103)
@@ -60,7 +60,7 @@ Partial Class frmDeposit
         btndeposit.FlatStyle = FlatStyle.Flat
         btndeposit.Font = New Font("Segoe UI Semibold", 22F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         btndeposit.ForeColor = Color.Black
-        btndeposit.Location = New Point(427, 476)
+        btndeposit.Location = New Point(427, 546)
         btndeposit.Name = "btndeposit"
         btndeposit.Size = New Size(266, 120)
         btndeposit.TabIndex = 11
@@ -82,13 +82,14 @@ Partial Class frmDeposit
         AutoScaleDimensions = New SizeF(10F, 25F)
         AutoScaleMode = AutoScaleMode.Font
         BackColor = SystemColors.ActiveCaptionText
-        ClientSize = New Size(705, 623)
+        ClientSize = New Size(716, 701)
         Controls.Add(PictureBox1)
         Controls.Add(btndeposit)
         Controls.Add(txtdeposit)
         Controls.Add(Label1)
         FormBorderStyle = FormBorderStyle.None
         Name = "frmDeposit"
+        StartPosition = FormStartPosition.CenterScreen
         CType(PictureBox1, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)
         PerformLayout()

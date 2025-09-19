@@ -4,7 +4,7 @@ Public Class frmAccountCreation
 
 
     Private Sub btncreateaccount_Click(sender As Object, e As EventArgs) Handles btncreateaccount.Click
-
+        Call Connection()
 
         If txtcreateuser.Text = "" Or txtcreatefirstname.Text = "" Or txtcreatelastname.Text = "" Or
            txtcreatecpnumber.Text = "" Or txtcreateaccounnt.Text = "" Or txtcreatepin.Text = "" Then
@@ -28,8 +28,6 @@ Public Class frmAccountCreation
             MsgBox("Cellphone number must be 11 digits and start with '09'.", vbExclamation, "Invalid Input")
             Exit Sub
         End If
-
-        Call Connection()
 
 
         Dim result As DialogResult

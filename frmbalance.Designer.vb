@@ -33,7 +33,7 @@ Partial Class frmbalance
         ' txtbalance
         ' 
         txtbalance.Font = New Font("Segoe UI Semibold", 36F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        txtbalance.Location = New Point(-1, 268)
+        txtbalance.Location = New Point(-1, 316)
         txtbalance.Name = "txtbalance"
         txtbalance.PlaceholderText = "Remaining Balance"
         txtbalance.ReadOnly = True
@@ -49,7 +49,7 @@ Partial Class frmbalance
         btnRefresh.FlatStyle = FlatStyle.Flat
         btnRefresh.Font = New Font("Segoe UI Semibold", 22F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         btnRefresh.ForeColor = Color.Black
-        btnRefresh.Location = New Point(427, 476)
+        btnRefresh.Location = New Point(427, 524)
         btnRefresh.Name = "btnRefresh"
         btnRefresh.Size = New Size(266, 120)
         btnRefresh.TabIndex = 12
@@ -61,7 +61,7 @@ Partial Class frmbalance
         Label2.AutoSize = True
         Label2.Font = New Font("Segoe UI Semibold", 28F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         Label2.ForeColor = Color.Goldenrod
-        Label2.Location = New Point(112, 179)
+        Label2.Location = New Point(112, 227)
         Label2.Name = "Label2"
         Label2.Size = New Size(516, 74)
         Label2.TabIndex = 14
@@ -82,13 +82,14 @@ Partial Class frmbalance
         AutoScaleDimensions = New SizeF(10F, 25F)
         AutoScaleMode = AutoScaleMode.Font
         BackColor = SystemColors.ActiveCaptionText
-        ClientSize = New Size(707, 623)
+        ClientSize = New Size(716, 701)
         Controls.Add(PictureBox1)
         Controls.Add(Label2)
         Controls.Add(btnRefresh)
         Controls.Add(txtbalance)
         FormBorderStyle = FormBorderStyle.None
         Name = "frmbalance"
+        StartPosition = FormStartPosition.CenterScreen
         Text = "frmbalance"
         CType(PictureBox1, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)

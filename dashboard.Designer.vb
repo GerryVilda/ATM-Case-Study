@@ -39,18 +39,18 @@ Partial Class dashboard
         ' 
         ' btnlogout
         ' 
-        btnlogout.BackColor = SystemColors.ActiveCaptionText
+        btnlogout.BackColor = Color.Goldenrod
         btnlogout.BackgroundImageLayout = ImageLayout.None
         btnlogout.Cursor = Cursors.Hand
         btnlogout.FlatAppearance.BorderSize = 0
         btnlogout.FlatAppearance.MouseDownBackColor = Color.FromArgb(CByte(24), CByte(24), CByte(24))
         btnlogout.FlatAppearance.MouseOverBackColor = Color.FromArgb(CByte(73), CByte(73), CByte(73))
         btnlogout.FlatStyle = FlatStyle.Flat
-        btnlogout.Font = New Font("Segoe UI Semibold", 14F, FontStyle.Bold)
-        btnlogout.ForeColor = Color.Goldenrod
-        btnlogout.Location = New Point(1036, 12)
+        btnlogout.Font = New Font("Segoe UI", 16F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        btnlogout.ForeColor = SystemColors.ActiveCaptionText
+        btnlogout.Location = New Point(25, 586)
         btnlogout.Name = "btnlogout"
-        btnlogout.Size = New Size(277, 97)
+        btnlogout.Size = New Size(510, 97)
         btnlogout.TabIndex = 6
         btnlogout.Text = "LOGOUT"
         btnlogout.UseVisualStyleBackColor = False
@@ -66,7 +66,7 @@ Partial Class dashboard
         btnstatementofaccount.FlatStyle = FlatStyle.Flat
         btnstatementofaccount.Font = New Font("Segoe UI", 16F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         btnstatementofaccount.ForeColor = Color.Black
-        btnstatementofaccount.Location = New Point(25, 498)
+        btnstatementofaccount.Location = New Point(25, 474)
         btnstatementofaccount.Name = "btnstatementofaccount"
         btnstatementofaccount.Size = New Size(510, 89)
         btnstatementofaccount.TabIndex = 1
@@ -78,7 +78,7 @@ Partial Class dashboard
         PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), Image)
         PictureBox1.Location = New Point(19, 12)
         PictureBox1.Name = "PictureBox1"
-        PictureBox1.Size = New Size(428, 282)
+        PictureBox1.Size = New Size(428, 205)
         PictureBox1.SizeMode = PictureBoxSizeMode.StretchImage
         PictureBox1.TabIndex = 0
         PictureBox1.TabStop = False
@@ -94,7 +94,7 @@ Partial Class dashboard
         btntransfer.FlatStyle = FlatStyle.Flat
         btntransfer.Font = New Font("Segoe UI", 16F, FontStyle.Bold)
         btntransfer.ForeColor = Color.Black
-        btntransfer.Location = New Point(25, 380)
+        btntransfer.Location = New Point(25, 363)
         btntransfer.Name = "btntransfer"
         btntransfer.Size = New Size(510, 89)
         btntransfer.TabIndex = 5
@@ -112,7 +112,7 @@ Partial Class dashboard
         btnwithdrawal.FlatStyle = FlatStyle.Flat
         btnwithdrawal.Font = New Font("Segoe UI", 16F, FontStyle.Bold)
         btnwithdrawal.ForeColor = Color.Black
-        btnwithdrawal.Location = New Point(25, 263)
+        btnwithdrawal.Location = New Point(25, 248)
         btnwithdrawal.Name = "btnwithdrawal"
         btnwithdrawal.Size = New Size(510, 89)
         btnwithdrawal.TabIndex = 4
@@ -130,7 +130,7 @@ Partial Class dashboard
         btndeposit.FlatStyle = FlatStyle.Flat
         btndeposit.Font = New Font("Segoe UI", 16F, FontStyle.Bold)
         btndeposit.ForeColor = Color.Black
-        btndeposit.Location = New Point(25, 143)
+        btndeposit.Location = New Point(25, 137)
         btndeposit.Name = "btndeposit"
         btndeposit.Size = New Size(510, 89)
         btndeposit.TabIndex = 3
@@ -148,7 +148,7 @@ Partial Class dashboard
         BTNBALANCEINQUIRY.FlatStyle = FlatStyle.Flat
         BTNBALANCEINQUIRY.Font = New Font("Segoe UI", 16F, FontStyle.Bold)
         BTNBALANCEINQUIRY.ForeColor = Color.Black
-        BTNBALANCEINQUIRY.Location = New Point(25, 25)
+        BTNBALANCEINQUIRY.Location = New Point(25, 21)
         BTNBALANCEINQUIRY.Name = "BTNBALANCEINQUIRY"
         BTNBALANCEINQUIRY.Size = New Size(510, 90)
         BTNBALANCEINQUIRY.TabIndex = 2
@@ -162,13 +162,14 @@ Partial Class dashboard
         PanelButtons.BorderStyle = BorderStyle.Fixed3D
         PanelButtons.Controls.Add(btnstatementofaccount)
         PanelButtons.Controls.Add(btntransfer)
+        PanelButtons.Controls.Add(btnlogout)
         PanelButtons.Controls.Add(BTNBALANCEINQUIRY)
         PanelButtons.Controls.Add(btnwithdrawal)
         PanelButtons.Controls.Add(btndeposit)
         PanelButtons.ForeColor = Color.FromArgb(CByte(212), CByte(175), CByte(55))
-        PanelButtons.Location = New Point(19, 300)
+        PanelButtons.Location = New Point(19, 223)
         PanelButtons.Name = "PanelButtons"
-        PanelButtons.Size = New Size(563, 623)
+        PanelButtons.Size = New Size(563, 700)
         PanelButtons.TabIndex = 6
         ' 
         ' PanelShow
@@ -177,9 +178,9 @@ Partial Class dashboard
         PanelShow.BackgroundImageLayout = ImageLayout.None
         PanelShow.BorderStyle = BorderStyle.Fixed3D
         PanelShow.ForeColor = Color.FromArgb(CByte(212), CByte(175), CByte(55))
-        PanelShow.Location = New Point(588, 300)
+        PanelShow.Location = New Point(588, 222)
         PanelShow.Name = "PanelShow"
-        PanelShow.Size = New Size(716, 623)
+        PanelShow.Size = New Size(716, 701)
         PanelShow.TabIndex = 7
         ' 
         ' lblusername
@@ -202,7 +203,6 @@ Partial Class dashboard
         ClientSize = New Size(1316, 935)
         Controls.Add(lblusername)
         Controls.Add(PanelShow)
-        Controls.Add(btnlogout)
         Controls.Add(PictureBox1)
         Controls.Add(PanelButtons)
         FormBorderStyle = FormBorderStyle.Fixed3D

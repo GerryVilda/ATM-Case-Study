@@ -50,7 +50,7 @@ Partial Class Deposit
         Panel1.Controls.Add(btndeposit)
         Panel1.Controls.Add(txtdeposit)
         Panel1.ForeColor = Color.FromArgb(CByte(212), CByte(175), CByte(55))
-        Panel1.Location = New Point(32, 310)
+        Panel1.Location = New Point(84, 312)
         Panel1.Name = "Panel1"
         Panel1.Size = New Size(506, 273)
         Panel1.TabIndex = 5
@@ -71,7 +71,7 @@ Partial Class Deposit
         ' PictureBox1
         ' 
         PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), Image)
-        PictureBox1.Location = New Point(-1, 59)
+        PictureBox1.Location = New Point(51, 61)
         PictureBox1.Name = "PictureBox1"
         PictureBox1.Size = New Size(587, 194)
         PictureBox1.SizeMode = PictureBoxSizeMode.StretchImage
@@ -83,12 +83,13 @@ Partial Class Deposit
         AutoScaleDimensions = New SizeF(10F, 25F)
         AutoScaleMode = AutoScaleMode.Font
         BackColor = SystemColors.ActiveCaptionText
-        ClientSize = New Size(584, 642)
+        ClientSize = New Size(690, 641)
         Controls.Add(Panel1)
         Controls.Add(PictureBox1)
         FormBorderStyle = FormBorderStyle.Fixed3D
         MaximizeBox = False
         Name = "Deposit"
+        StartPosition = FormStartPosition.CenterScreen
         Text = "Deposit"
         Panel1.ResumeLayout(False)
         Panel1.PerformLayout()
