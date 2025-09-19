@@ -40,9 +40,10 @@ Partial Class frmLogin
         btnlogin.FlatStyle = FlatStyle.Flat
         btnlogin.Font = New Font("Arial", 16F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         btnlogin.ForeColor = SystemColors.ActiveCaptionText
-        btnlogin.Location = New Point(76, 634)
+        btnlogin.Location = New Point(61, 507)
+        btnlogin.Margin = New Padding(2)
         btnlogin.Name = "btnlogin"
-        btnlogin.Size = New Size(474, 71)
+        btnlogin.Size = New Size(379, 57)
         btnlogin.TabIndex = 2
         btnlogin.Text = "LOGIN"
         btnlogin.UseVisualStyleBackColor = False
@@ -50,10 +51,11 @@ Partial Class frmLogin
         ' txtloginpassword
         ' 
         txtloginpassword.Font = New Font("Segoe UI Semibold", 18F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        txtloginpassword.Location = New Point(742, 483)
+        txtloginpassword.Location = New Point(594, 386)
+        txtloginpassword.Margin = New Padding(2)
         txtloginpassword.Name = "txtloginpassword"
-        txtloginpassword.PlaceholderText = "Password"
-        txtloginpassword.Size = New Size(474, 55)
+        txtloginpassword.PlaceholderText = "PIN"
+        txtloginpassword.Size = New Size(380, 47)
         txtloginpassword.TabIndex = 1
         txtloginpassword.TabStop = False
         txtloginpassword.UseSystemPasswordChar = True
@@ -62,10 +64,11 @@ Partial Class frmLogin
         ' 
         txtloginusername.AccessibleName = "Username"
         txtloginusername.Font = New Font("Segoe UI Semibold", 18F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        txtloginusername.Location = New Point(742, 377)
+        txtloginusername.Location = New Point(594, 302)
+        txtloginusername.Margin = New Padding(2)
         txtloginusername.Name = "txtloginusername"
-        txtloginusername.PlaceholderText = "Username"
-        txtloginusername.Size = New Size(474, 55)
+        txtloginusername.PlaceholderText = "Account Number"
+        txtloginusername.Size = New Size(380, 47)
         txtloginusername.TabIndex = 0
         txtloginusername.TabStop = False
         ' 
@@ -75,18 +78,20 @@ Partial Class frmLogin
         Label1.BackColor = Color.Transparent
         Label1.Font = New Font("Segoe UI Semibold", 36F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         Label1.ForeColor = SystemColors.ButtonHighlight
-        Label1.Location = New Point(715, 60)
+        Label1.Location = New Point(572, 48)
+        Label1.Margin = New Padding(2, 0, 2, 0)
         Label1.Name = "Label1"
-        Label1.Size = New Size(541, 192)
+        Label1.Size = New Size(451, 162)
         Label1.TabIndex = 3
         Label1.Text = "Sign in to your " & vbCrLf & "      account"
         ' 
         ' PictureBox1
         ' 
         PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), Image)
-        PictureBox1.Location = New Point(1, 168)
+        PictureBox1.Location = New Point(1, 134)
+        PictureBox1.Margin = New Padding(2)
         PictureBox1.Name = "PictureBox1"
-        PictureBox1.Size = New Size(659, 472)
+        PictureBox1.Size = New Size(527, 378)
         PictureBox1.SizeMode = PictureBoxSizeMode.StretchImage
         PictureBox1.TabIndex = 0
         PictureBox1.TabStop = False
@@ -96,9 +101,10 @@ Partial Class frmLogin
         Panel1.BackColor = Color.Black
         Panel1.Controls.Add(lnklblAccount)
         Panel1.Controls.Add(btnlogin)
-        Panel1.Location = New Point(666, -3)
+        Panel1.Location = New Point(533, -2)
+        Panel1.Margin = New Padding(2)
         Panel1.Name = "Panel1"
-        Panel1.Size = New Size(634, 815)
+        Panel1.Size = New Size(507, 652)
         Panel1.TabIndex = 4
         ' 
         ' lnklblAccount
@@ -108,19 +114,20 @@ Partial Class frmLogin
         lnklblAccount.Font = New Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         lnklblAccount.ForeColor = SystemColors.ButtonHighlight
         lnklblAccount.LinkColor = Color.White
-        lnklblAccount.Location = New Point(226, 708)
+        lnklblAccount.Location = New Point(181, 566)
+        lnklblAccount.Margin = New Padding(2, 0, 2, 0)
         lnklblAccount.Name = "lnklblAccount"
-        lnklblAccount.Size = New Size(182, 32)
+        lnklblAccount.Size = New Size(150, 28)
         lnklblAccount.TabIndex = 0
         lnklblAccount.TabStop = True
         lnklblAccount.Text = "Create Account"
         ' 
         ' frmLogin
         ' 
-        AutoScaleDimensions = New SizeF(10F, 25F)
+        AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
         BackColor = Color.Black
-        ClientSize = New Size(1297, 805)
+        ClientSize = New Size(1038, 644)
         Controls.Add(PictureBox1)
         Controls.Add(Label1)
         Controls.Add(txtloginpassword)
@@ -128,6 +135,7 @@ Partial Class frmLogin
         Controls.Add(Panel1)
         ForeColor = SystemColors.ButtonHighlight
         FormBorderStyle = FormBorderStyle.Fixed3D
+        Margin = New Padding(2)
         MaximizeBox = False
         Name = "frmLogin"
         StartPosition = FormStartPosition.CenterScreen
