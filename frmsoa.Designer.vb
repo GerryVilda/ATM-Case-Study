@@ -92,12 +92,13 @@ Partial Class frmsoa
         btngeneratereciept.FlatAppearance.MouseOverBackColor = Color.DarkGoldenrod
         btngeneratereciept.FlatStyle = FlatStyle.Flat
         btngeneratereciept.Font = New Font("Segoe UI Semibold", 12.0F, FontStyle.Bold)
+        btngeneratereciept.ForeColor = Color.Black
         btngeneratereciept.Location = New Point(467, 617)
         btngeneratereciept.Margin = New Padding(2)
         btngeneratereciept.Name = "btngeneratereciept"
         btngeneratereciept.Size = New Size(240, 76)
         btngeneratereciept.TabIndex = 1
-        btngeneratereciept.Text = "Button1"
+        btngeneratereciept.Text = "Generate Receipt"
         btngeneratereciept.UseVisualStyleBackColor = False
         ' 
         ' dtpfrom
@@ -146,6 +147,7 @@ Partial Class frmsoa
         btnfilter.FlatAppearance.MouseOverBackColor = Color.DarkGoldenrod
         btnfilter.FlatStyle = FlatStyle.Flat
         btnfilter.Font = New Font("Segoe UI Semibold", 12.0F, FontStyle.Bold)
+        btnfilter.ForeColor = SystemColors.ActiveCaptionText
         btnfilter.Location = New Point(0, 617)
         btnfilter.Margin = New Padding(2)
         btnfilter.Name = "btnfilter"
